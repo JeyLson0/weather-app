@@ -1,7 +1,6 @@
-function sayHi ( name ) {
-    var age=10+2;
-}
+import './style.css';
+import returnLocation from './scripts/geoloc';
+import './scripts/weatherapi';
+import './scripts/form';
 
-let age=12;
-
-var things = ['cool', "double"  ];
+returnLocation();
