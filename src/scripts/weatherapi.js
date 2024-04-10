@@ -50,7 +50,6 @@ export async function getWeatherData(input) {
       data.current.condition.text,
       data.current.condition.icon,
     );
-    dataObj.showData();
     console.log(data);
     return dataObj;
   } catch (error) {

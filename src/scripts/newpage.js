@@ -4,7 +4,7 @@ import cloudVideo from '../assets/cloudVideo.mp4';
 
 const pageBody = document.querySelector('body');
 
-export function displayBgVid() {
+export default function displayBgVid() {
   const videoElem = document.createElement('video');
   pageBody.append(videoElem);
   videoElem.setAttribute('autoplay', '');
@@ -17,5 +17,3 @@ export function displayBgVid() {
   videoSrcElem.setAttribute('src', cloudVideo);
   videoSrcElem.setAttribute('type', 'video/mp4');
 }
-
-export function displayContent(data) {}

@@ -1,5 +1,6 @@
 import { WeatherData, getWeatherData } from './weatherapi';
-import { displayBgVid, displayContent } from './newpage';
+import displayBgVid from './newpage';
+import assembleContent from './content';
 
 const form = document.querySelector('.form-container');
 export const locationSearchBox = document.querySelector('#location-search-box');
@@ -26,9 +27,10 @@ async function transitionPage(event) {
   const input = locationSearchBox.value;
   const data = await getWeatherData(input);
   if (data instanceof WeatherData) {
+    console.log(data);
     removeForm();
     displayBgVid();
-    console.log('change page');
+    assembleContent(data);
   }
 }
 

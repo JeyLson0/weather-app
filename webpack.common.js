@@ -52,7 +52,7 @@ const config = {
   devtool: 'inline-source-map',
   plugins: [
     new HTMLWebpackPlugin({
-      title: '',
+      title: 'WeatherApp',
       filename: 'index.html',
       template: 'src/template.html',
     }),

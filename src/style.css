@@ -82,10 +82,9 @@ video {
 .content-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
-    justify-self: end;
     background-color:rgba(56 182 255 / 60%);
-    border: 2px dashed red;
     padding: 2rem;
     border-radius: 10%;
     min-height: 25rem;
@@ -93,8 +92,8 @@ video {
 
 .data-container {
     display: flex;
+    justify-content: center;
     gap: 1rem;
-    border: 2px dashed blue;
 }
 
 .title {
