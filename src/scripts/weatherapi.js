@@ -36,7 +36,7 @@ export class WeatherData {
 
 export async function getWeatherData(input) {
   const weatherAPI = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=${p}&q=${input}&aqi=no`,
+    `https://api.weatherapi.com/v1/current.json?key=${p}&q=${input}&aqi=no`,
     { mode: 'cors' },
   );
   const data = await weatherAPI.json();
