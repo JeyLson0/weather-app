@@ -1,5 +1,3 @@
-const p = '42c4fc7289824302a0f135323240204';
-
 export class WeatherData {
   constructor(
     input,
@@ -36,7 +34,7 @@ export class WeatherData {
 
 export async function getWeatherData(input) {
   const weatherAPI = await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=${p}&q=${input}&aqi=no`,
+    `https://api.weatherapi.com/v1/current.json?key=42c4fc7289824302a0f135323240204&q=${input}&aqi=no`,
     { mode: 'cors' },
   );
   const data = await weatherAPI.json();
