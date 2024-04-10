@@ -1,4 +1,4 @@
-import locationSearchBox from './form';
+import { locationSearchBox } from './form';
 
 function successCb(position) {
   console.log(position);

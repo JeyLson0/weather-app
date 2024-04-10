@@ -1,24 +1,34 @@
 const p = '42c4fc7289824302a0f135323240204';
 
 export class WeatherData {
-  constructor(input, location, country, celsius, fahrenheit, apiCondition) {
+  constructor(
+    input,
+    location,
+    country,
+    celsius,
+    fahrenheit,
+    apiCondition,
+    conditionIcon,
+  ) {
     this.name = input;
     this.location = location;
     this.country = country;
     this.celsius = celsius;
     this.fahrenheit = fahrenheit;
     this.apiCondition = apiCondition;
+    this.conditionIcon = conditionIcon;
   }
 
   showData() {
     // edit code that will show data to the box.
     console.log(
       `
-      name: ${this.name}
+      Name: ${this.name}
       location: ${this.location} 
       country: ${this.country} 
-      celsiusTemp: ${this.celsius}c
-      fahrenheit: ${this.fahrenheit}f
+      Temperature: ${this.celsius}c / ${this.fahrenheit}f
+      Condition: ${this.apiCondition}
+      Icon: ${this.conditionIcon}
       `,
     );
   }
@@ -37,9 +47,11 @@ export async function getWeatherData(input) {
       data.location.country,
       data.current.temp_c,
       data.current.temp_f,
-      data.current.condition,
+      data.current.condition.text,
+      data.current.condition.icon,
     );
     dataObj.showData();
+    console.log(data);
     return dataObj;
   } catch (error) {
     return data;

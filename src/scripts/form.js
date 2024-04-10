@@ -1,7 +1,8 @@
 import { WeatherData, getWeatherData } from './weatherapi';
+import { displayBgVid, displayContent } from './newpage';
 
 const form = document.querySelector('.form-container');
-const locationSearchBox = document.querySelector('#location-search-box');
+export const locationSearchBox = document.querySelector('#location-search-box');
 
 async function textValidation(event) {
   locationSearchBox.setCustomValidity('');
@@ -16,15 +17,19 @@ async function textValidation(event) {
 
 locationSearchBox.addEventListener('change', textValidation);
 
+export function removeForm() {
+  form.remove();
+}
+
 async function transitionPage(event) {
   event.preventDefault();
   const input = locationSearchBox.value;
   const data = await getWeatherData(input);
   if (data instanceof WeatherData) {
+    removeForm();
+    displayBgVid();
     console.log('change page');
   }
 }
 
 form.addEventListener('submit', transitionPage);
-
-export default locationSearchBox;

@@ -35,12 +35,24 @@ const config = {
           },
         },
       },
+      {
+        test: /\.mp4$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'video',
+            },
+          },
+        ],
+      },
     ],
   },
   devtool: 'inline-source-map',
   plugins: [
     new HTMLWebpackPlugin({
-      title: 'Weather App',
+      title: '',
       filename: 'index.html',
       template: 'src/template.html',
     }),
